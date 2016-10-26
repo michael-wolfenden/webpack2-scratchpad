@@ -2,6 +2,7 @@ const { optimize } = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackMd5Hash = require('webpack-md5-hash')
 const { resolve } = require('path')
+var Visualizer = require('webpack-visualizer-plugin')
 
 const appSrc = resolve(__dirname, 'src')
 const appDist = resolve(__dirname, 'dist')
@@ -53,6 +54,8 @@ const webpackConfig = {
 
     // generate a 'manifest' chunk to be inlined in the HTML template
     new optimize.CommonsChunkPlugin('manifest'),
+
+    new Visualizer()
   ],
 }
 

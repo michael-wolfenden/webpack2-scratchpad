@@ -15,7 +15,8 @@
     "babel-preset-stage-2": "^6.18.0",
     "clean-webpack-plugin": "^0.1.13",
     "webpack": "beta",
-    "webpack-md5-hash": "^0.0.5"
+    "webpack-md5-hash": "^0.0.5",
+    "webpack-visualizer-plugin": "^0.1.5"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0"
