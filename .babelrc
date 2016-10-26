@@ -1,0 +1,17 @@
+{
+  "presets": [
+    // http://babeljs.io/docs/plugins/preset-stage-2/
+    "stage-2",
+    // http://babeljs.io/docs/plugins/preset-es2015/
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    // https://babeljs.io/docs/plugins/transform-runtime/
+    "transform-runtime"
+  ]
+}

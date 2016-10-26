@@ -1,0 +1,2 @@
+webpack@beta babel-preset-es2015 babel-loader babel-core babel-preset-stage-2 babel-plugin-transform-runtime clean-webpack-plugin webpack-md5-hash
+babel-runtime
