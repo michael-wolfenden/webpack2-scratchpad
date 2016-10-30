@@ -1,6 +1,5 @@
-const { optimize } = require('webpack')
+const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const WebpackMd5Hash = require('webpack-md5-hash')
 const { resolve } = require('path')
 var Visualizer = require('webpack-visualizer-plugin')
 
@@ -43,17 +42,17 @@ const webpackConfig = {
     new CleanWebpackPlugin(appDist),
 
     // generate deterministic chunk hashes based on file contents
-    new WebpackMd5Hash(),
+    new webpack.HashedModuleIdsPlugin(),
 
     // extract vendor chunk
     // https://jeremygayed.com/dynamic-vendor-bundling-in-webpack-528993e48aab#.jrtpk3y9z
-    new optimize.CommonsChunkPlugin({
+    new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
 
     // generate a 'manifest' chunk to be inlined in the HTML template
-    new optimize.CommonsChunkPlugin('manifest'),
+    new webpack.optimize.CommonsChunkPlugin('manifest'),
 
     new Visualizer()
   ],
